@@ -1,5 +1,7 @@
 package kr.or.dgit.refactoring_study;
 
+import kr.or.dgit.refactoring_study.statement.Statement;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -27,9 +29,13 @@ public class Main {
 		c1.addRental(r4);
 		c1.addRental(r6);
 		
-		System.out.println(c.statement());
+		System.out.println(c.statement(Statement.TEXT));
 		System.out.println();
-		System.out.println(c1.statement());
+		System.out.println(c1.statement(Statement.TEXT));
+		System.out.println("==================html===============");
+		System.out.println(c.statement(Statement.HTML));
+		System.out.println();
+		System.out.println(c1.statement(Statement.HTML));
 
 	}
 
