@@ -1,12 +1,17 @@
 package kr.or.dgit.refactoring_study.statement;
 
-import java.util.List;
-
 import kr.or.dgit.refactoring_study.Customer;
 import kr.or.dgit.refactoring_study.Rental;
 
 public class TextStatement extends Statement {
-	
+	private static final TextStatement instance = new TextStatement();
+
+	private TextStatement() {}
+
+	public static TextStatement getInstance() {
+		return instance;
+	}
+
 	protected String headerString(String customerName) {
 		return String.format("%s 고객님의 대여기록%n", customerName);
 	}

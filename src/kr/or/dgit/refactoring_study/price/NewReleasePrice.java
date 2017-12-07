@@ -1,12 +1,19 @@
 package kr.or.dgit.refactoring_study.price;
 
-import kr.or.dgit.refactoring_study.Movie;
-
 public class NewReleasePrice extends Price {
+	private static final NewReleasePrice instance = new NewReleasePrice();
+	
+	private NewReleasePrice() {}
+
+	
+	public static NewReleasePrice getInstance() {
+		return instance;
+	}
+
 
 	@Override
-	public int getPriceCode() {
-		return Movie.NEW_RELEASE;
+	public MovieKind getPriceCode() {
+		return MovieKind.NEW_RELEASE;
 	}
 
 	@Override

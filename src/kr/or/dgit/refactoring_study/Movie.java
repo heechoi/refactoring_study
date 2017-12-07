@@ -1,17 +1,15 @@
 package kr.or.dgit.refactoring_study;
 
+import kr.or.dgit.refactoring_study.price.MovieKind;
 import kr.or.dgit.refactoring_study.price.Price;
 import kr.or.dgit.refactoring_study.price.PriceFactory;
 
 public class Movie {
-	public static final int REGULAR=0;
-	public static final int NEW_RELEASE = 1;
-	public static final int CHILRENS = 2;
 	
 	private String title;
 	private Price price;
 	
-	public Movie(String title, int priceCode) {
+	public Movie(String title, MovieKind priceCode) {
 		this.title = title;
 		setPriceCode(priceCode);
 	}
@@ -24,11 +22,11 @@ public class Movie {
 		this.title = title;
 	}
 
-	public int getPriceCode() {
+	public MovieKind getPriceCode() {
 		return price.getPriceCode();
 	}
 
-	public void setPriceCode(int priceCode) {
+	public void setPriceCode(MovieKind priceCode) {
 		price = PriceFactory.getFactory(priceCode);
 	}
 	

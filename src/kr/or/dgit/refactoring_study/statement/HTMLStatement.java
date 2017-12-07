@@ -4,6 +4,13 @@ import kr.or.dgit.refactoring_study.Customer;
 import kr.or.dgit.refactoring_study.Rental;
 
 public class HTMLStatement extends Statement {
+	private static final HTMLStatement instance = new HTMLStatement();
+	
+	private HTMLStatement() {}
+	
+	public static HTMLStatement getInstance() {
+		return instance;
+	}
 
 	protected String headerString(String customerName) {
 		return String.format("<H1><EM>%s 고객님의 대여 기록 </EM></H1>%n", customerName);

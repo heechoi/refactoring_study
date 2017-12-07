@@ -1,21 +1,22 @@
 package kr.or.dgit.refactoring_study.price;
 
-import kr.or.dgit.refactoring_study.Movie;
-
-public class PriceFactory {
-
-	public static Price getFactory(int priceCode) {
+public class PriceFactory {	
+	
+	public static Price getFactory(MovieKind priceCode) {
 		Price price = null;
 		
 		switch(priceCode) {
-		case Movie.REGULAR:
-			price = new RegularPrice();
+		case REGULAR:
+			price = RegularPrice.getInstance();
 			break;
-		case Movie.NEW_RELEASE:
-			price = new NewReleasePrice();
+		case NEW_RELEASE:
+			price =  NewReleasePrice.getInstance();
 			break;
-		case Movie.CHILRENS:
-			price = new ChildrenPrice();
+		case CHILRENS:
+			price = ChildrenPrice.getInstance();
+			break;
+		case ACTION:
+			price = ActionPrice.getInstance();
 			break;
 		default:
 			throw new IllegalArgumentException("가격 코드가 잘못 됐습니다");
